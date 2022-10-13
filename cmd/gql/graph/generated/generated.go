@@ -227,6 +227,9 @@ var sources = []*ast.Source{
 #
 # https://gqlgen.com/getting-started/
 
+"""
+Todo represents todo type
+"""
 type Todo {
   id: ID!
   text: String!
@@ -234,11 +237,17 @@ type Todo {
   user: User!
 }
 
+"""
+User represents user type
+"""
 type User {
   id: ID!
   name: String!
 }
 
+"""
+NewTodo represents new todo input
+"""
 input NewTodo {
   text: String!
   userId: String!

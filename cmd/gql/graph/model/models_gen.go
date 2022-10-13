@@ -2,11 +2,13 @@
 
 package model
 
+// NewTodo represents new todo input
 type NewTodo struct {
 	Text   string `json:"text"`
 	UserID string `json:"userId"`
 }
 
+// Todo represents todo type
 type Todo struct {
 	ID   string `json:"id"`
 	Text string `json:"text"`
@@ -14,6 +16,7 @@ type Todo struct {
 	User *User  `json:"user"`
 }
 
+// User represents user type
 type User struct {
 	ID   string `json:"id"`
 	Name string `json:"name"`

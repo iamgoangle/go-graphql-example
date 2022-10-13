@@ -12,7 +12,6 @@ import (
 
 // Todos is the resolver for the todos field.
 func (r *queryResolver) Todos(ctx context.Context) ([]*model.Todo, error) {
-
 	var todos []*model.Todo
 
 	usrATodo := model.Todo{
