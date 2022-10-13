@@ -12,21 +12,21 @@ import (
 
 // Todos is the resolver for the todos field.
 func (r *queryResolver) Todos(ctx context.Context) ([]*model.Todo, error) {
-	var todos []*model.Todo
+	//var todos []*model.Todo
+	//
+	//usrATodo := model.Todo{
+	//	ID:   "001",
+	//	Text: "test todo",
+	//	Done: false,
+	//	User: &model.User{
+	//		ID:   "usr-001",
+	//		Name: "Teerapong Singthong",
+	//	},
+	//}
+	//
+	//todos = append(todos, &usrATodo)
 
-	usrATodo := model.Todo{
-		ID:   "001",
-		Text: "test todo",
-		Done: false,
-		User: &model.User{
-			ID:   "usr-001",
-			Name: "Teerapong Singthong",
-		},
-	}
-
-	todos = append(todos, &usrATodo)
-
-	return todos, nil
+	return r.todos, nil
 }
 
 // Query returns generated.QueryResolver implementation.

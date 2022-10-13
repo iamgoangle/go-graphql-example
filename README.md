@@ -54,3 +54,31 @@ GraphlQL Server and Playground
 ```shell
 go run main.go
 ```
+
+## Playground Queries
+
+**Mutation**
+```shell
+mutation createTodo {
+  createTodo(input: { text: "golf todo", userId: "1" }) {
+    user {
+      id
+    }
+    text
+    done
+  }
+}
+```
+
+**Query**
+```shell
+query findTodos {
+  todos {
+    user {
+      id
+      name
+    }
+    text
+  }
+}
+```

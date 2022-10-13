@@ -6,6 +6,7 @@ package graph
 import (
 	"context"
 	"fmt"
+	"math/rand"
 
 	"github.com/iamgoangle/go-graphql-example/cmd/gql/graph/generated"
 	"github.com/iamgoangle/go-graphql-example/cmd/gql/graph/model"
@@ -13,7 +14,14 @@ import (
 
 // CreateTodo is the resolver for the createTodo field.
 func (r *mutationResolver) CreateTodo(ctx context.Context, input model.NewTodo) (*model.Todo, error) {
-	panic(fmt.Errorf("not implemented: CreateTodo - createTodo"))
+	todo := &model.Todo{
+		Text: input.Text,
+		ID:   fmt.Sprintf("T%d", rand.Int()),
+		User: &model.User{ID: input.UserID, Name: "user " + input.UserID},
+	}
+	r.todos = append(r.todos, todo)
+
+	return todo, nil
 }
 
 // Mutation returns generated.MutationResolver implementation.
